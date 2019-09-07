@@ -1,7 +1,7 @@
 const path = require('path');
 const http = require('http');
 const fs = require('fs');
-const API = require('./api.js.js');
+const API = require('./api.js.js.js');
 
 const ip = '127.0.0.1';
 const port = 3002;
