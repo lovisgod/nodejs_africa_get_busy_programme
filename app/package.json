@@ -1,0 +1,12 @@
+{
+  "name": "ayooluwa_olosunde_nodejs_africa_get_busy_programme",
+  "version": "1.0.0",
+  "description": "First task in Nodejs africa getbusy programme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "ayooluwa_olosunde",
+  "license": "ISC"
+}
