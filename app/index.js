@@ -30,12 +30,12 @@ http.createServer((req, res) => {
     fs.readFile(file, (err, content) => {
         if (err) {
             if(err.code == 'ENOENT'){
-                if (req.url == '/'){
-                    req.url = '/api';
+                if (req.url.includes('/')){
+                    req.url = `/api${req.url}`;
                 }
              // check if this is an api call else serve error html
                 if (API.catchAPIrequest(req.url)) {
-                  API.exec(res);
+                  API.exec(res, req);
                 }
               else
                 // not an api call -file just doesn't exit

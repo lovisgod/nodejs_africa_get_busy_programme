@@ -1,6 +1,6 @@
 class API {
     constructor() {}
-    static exec(res) {
+    static exec(res, req) {
         let routes = API.routes;
         switch (routes) {
             case 'api':
@@ -10,6 +10,11 @@ class API {
             case 'api/v1':
                 res.writeHead(200, { 'Content-Type': 'application/json'});
                 res.end('welcome to api system', 'utf-8');
+                break;
+            case 'api/message' :
+                console.log(req);
+                res.writeHead(200, { 'Content-Type': 'application/json'});
+                res.end('sample form', 'utf-8');
                 break;
             default:
                 res.writeHead(404, { 'Content-Type': 'text/html' });
@@ -26,6 +31,7 @@ class API {
         if (v.constructor === String)
         // set the value of API.parts if the first element of the req url is api
             if(v.split('/')[0] == 'api'){
+                console.log(v);
                 API.routes = v;
                 return true;
             }
